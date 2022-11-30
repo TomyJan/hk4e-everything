@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <LogConf>
+        <LogLevelMask value="" />
+        <MaxLogLen value="8192" />
+        <LogCutTime value="1440" />
+        <LogKeepTime value="4320" />
+        <LogQueueSize value="100" />
+        <LogBufSize value="14336" />
+        <LogList>
+            <DebugFile path="log/dispatch.log" level="INFO WARNING ERROR NOTICE FATAL" />
+            <WarningFile path="log/dispatch.warning.log" level="WARNING ERROR FATAL" />
+            <ErrorFile path="log/dispatch.error.log" level="ERROR FATAL" />
+            <CmdFile path="log/dispatch.cmd.log" level="CMD" />
+            <NoticeFile path="log/dispatch.notice.log" level="NOTICE" />
+        </LogList>
+    </LogConf>
+    <NetConf>
+        <GateserverServerConf>
+            <RecvBufLen value="300" />
+            <MaxSendPacketLen value="250" />
+            <ThreadNum value="1" />
+            <KeepAliveSec value="10" />
+            <TimeoutSec value="30" />
+            <MaxConnNum value="128" />
+            <CutPacket value="1" />
+            <RefuseRepeatIp value="1" />
+            <AsyncSend value="true" CachePacketMaxNum="30000" />
+            <Backlog value="2048" />
+        </GateserverServerConf>
+        <HttpServerConf>
+            <RecvBufLen value="16" />
+            <ThreadNum value="2" />
+            <KeepAliveSec value="0" />
+            <TimeoutSec value="30" />
+            <MaxConnNum value="4096" />
+            <CutPacket value="0" />
+            <Backlog value="2048" />
+        </HttpServerConf>
+    </NetConf>
+    <MysqlConf>
+        <Db index="1" name="player_uid" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="2" name="player_online_id_data" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3" name="player_psn_online_id_data" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="101" name="player_data_0" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="102" name="player_data_1" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="103" name="player_data_2" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="104" name="player_data_3" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="105" name="player_data_4" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="106" name="player_data_5" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="107" name="player_data_6" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="108" name="player_data_7" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="109" name="player_data_8" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="110" name="player_data_9" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="111" name="player_data_10" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="112" name="player_data_11" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="113" name="player_data_12" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="114" name="player_data_13" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="115" name="player_data_14" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="116" name="player_data_15" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="117" name="player_data_16" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="118" name="player_data_17" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="119" name="player_data_18" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="120" name="player_data_19" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="121" name="player_data_20" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="122" name="player_data_21" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="123" name="player_data_22" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="124" name="player_data_23" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="125" name="player_data_24" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="126" name="player_data_25" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="127" name="player_data_26" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="128" name="player_data_27" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="129" name="player_data_28" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="130" name="player_data_29" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="131" name="player_data_30" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="132" name="player_data_31" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="133" name="player_data_32" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="134" name="player_data_33" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="135" name="player_data_34" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="136" name="player_data_35" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="137" name="player_data_36" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="138" name="player_data_37" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="139" name="player_data_38" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="140" name="player_data_39" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="141" name="player_data_40" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="142" name="player_data_41" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="143" name="player_data_42" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="144" name="player_data_43" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="145" name="player_data_44" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="146" name="player_data_45" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="147" name="player_data_46" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="148" name="player_data_47" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="149" name="player_data_48" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="150" name="player_data_49" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="151" name="player_data_50" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="152" name="player_data_51" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="153" name="player_data_52" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="154" name="player_data_53" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="155" name="player_data_54" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="156" name="player_data_55" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="157" name="player_data_56" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="158" name="player_data_57" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="159" name="player_data_58" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="160" name="player_data_59" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="161" name="player_data_60" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="162" name="player_data_61" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="163" name="player_data_62" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="164" name="player_data_63" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="165" name="player_data_64" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="166" name="player_data_65" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="167" name="player_data_66" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="168" name="player_data_67" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="169" name="player_data_68" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="170" name="player_data_69" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="171" name="player_data_70" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="172" name="player_data_71" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="173" name="player_data_72" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="174" name="player_data_73" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="175" name="player_data_74" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="176" name="player_data_75" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="177" name="player_data_76" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="178" name="player_data_77" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="179" name="player_data_78" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="180" name="player_data_79" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3001" name="block_data_0" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3002" name="block_data_1" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3003" name="block_data_2" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3004" name="block_data_3" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3005" name="block_data_4" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3006" name="block_data_5" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3007" name="block_data_6" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3008" name="block_data_7" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3009" name="block_data_8" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3010" name="block_data_9" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3011" name="block_data_10" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3012" name="block_data_11" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3013" name="block_data_12" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3014" name="block_data_13" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3015" name="block_data_14" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3016" name="block_data_15" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3017" name="block_data_16" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3018" name="block_data_17" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3019" name="block_data_18" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3020" name="block_data_19" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3021" name="block_data_20" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3022" name="block_data_21" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3023" name="block_data_22" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3024" name="block_data_23" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3025" name="block_data_24" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3026" name="block_data_25" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3027" name="block_data_26" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3028" name="block_data_27" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3029" name="block_data_28" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3030" name="block_data_29" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3031" name="block_data_30" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3032" name="block_data_31" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3033" name="block_data_32" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3034" name="block_data_33" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3035" name="block_data_34" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3036" name="block_data_35" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3037" name="block_data_36" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3038" name="block_data_37" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3039" name="block_data_38" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="3040" name="block_data_39" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4001" name="home_data_0" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4002" name="home_data_1" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4003" name="home_data_2" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4004" name="home_data_3" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4005" name="home_data_4" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4006" name="home_data_5" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4007" name="home_data_6" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4008" name="home_data_7" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4009" name="home_data_8" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4010" name="home_data_9" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4011" name="home_data_10" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4012" name="home_data_11" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4013" name="home_data_12" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4014" name="home_data_13" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4015" name="home_data_14" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4016" name="home_data_15" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4017" name="home_data_16" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4018" name="home_data_17" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4019" name="home_data_18" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4020" name="home_data_19" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4021" name="home_data_20" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4022" name="home_data_21" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4023" name="home_data_22" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4024" name="home_data_23" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4025" name="home_data_24" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4026" name="home_data_25" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4027" name="home_data_26" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4028" name="home_data_27" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4029" name="home_data_28" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4030" name="home_data_29" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4031" name="home_data_30" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4032" name="home_data_31" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4033" name="home_data_32" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4034" name="home_data_33" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4035" name="home_data_34" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4036" name="home_data_35" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4037" name="home_data_36" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4038" name="home_data_37" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4039" name="home_data_38" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4040" name="home_data_39" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4041" name="home_data_40" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4042" name="home_data_41" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4043" name="home_data_42" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4044" name="home_data_43" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4045" name="home_data_44" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4046" name="home_data_45" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4047" name="home_data_46" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4048" name="home_data_47" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4049" name="home_data_48" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4050" name="home_data_49" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4051" name="home_data_50" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4052" name="home_data_51" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4053" name="home_data_52" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4054" name="home_data_53" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4055" name="home_data_54" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4056" name="home_data_55" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4057" name="home_data_56" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4058" name="home_data_57" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4059" name="home_data_58" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4060" name="home_data_59" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4061" name="home_data_60" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4062" name="home_data_61" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4063" name="home_data_62" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4064" name="home_data_63" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4065" name="home_data_64" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4066" name="home_data_65" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4067" name="home_data_66" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4068" name="home_data_67" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4069" name="home_data_68" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4070" name="home_data_69" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4071" name="home_data_70" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4072" name="home_data_71" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4073" name="home_data_72" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4074" name="home_data_73" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4075" name="home_data_74" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4076" name="home_data_75" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4077" name="home_data_76" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4078" name="home_data_77" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4079" name="home_data_78" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="4080" name="home_data_79" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_user_os_beta01" />
+        <Db index="1001" name="" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_config_os_beta01" />
+        <Db index="1002" name="" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_deploy_config_os_beta01" />
+        <Db index="2001" name="" host="192.0.0.2" port="3306" user="root" pwd="root" dbname="db_hk4e_order_os_beta01" />
+    </MysqlConf>
+    <RedisConf>
+        <Db index="1" name="player_status" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="2" name="mail_box" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="3" name="offline_msg" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="4" name="player_friend" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="5" name="player_ask_friend" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="6" name="player_brief" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="7" name="player_blacklist" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="8" name="player_private_chat" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="9" name="player_recent_chat" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="10" name="player_private_chat_unread" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="11" name="player_activity_social" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="12" name="home_status" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="13" name="home_brief" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="14" name="home_offline_msg" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="15" name="offline_op" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="16" name="custom_dungeon" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="17" name="player_psn_friend" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="18" name="player_psn_blacklist" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+        <Db index="19" name="home_blueprint" host="192.0.0.3" port="6379" pwd="" db="db_hk4e_os_beta01" />
+    </RedisConf>
+    <MysqlExtraConf player_db_count="80" home_db_count="80" is_judge_user_db_delete="true" />
+    <RegionConf name="os_beta01" />
+    <ServiceList>
+        <Dispatch name="dispatch" thread_num="1" />
+    </ServiceList>
+    <AppList>
+        <App app_id="1.1.1.1">
+            <Port name="port_player" port="18101" />
+        </App>
+        <App app_id="1.2.1.1">
+            <Port name="port_gt" port="18201" />
+        </App>
+        <App app_id="1.3.1.1">
+            <Port name="port_service" port="18301" />
+        </App>
+        <App app_id="1.4.1.1"></App>
+        <App app_id="1.5.1.1">
+            <Port name="port_http" port="18401" />
+            <Port name="port_gt" port="18421" />
+        </App>
+        <App app_id="1.6.1.1">
+            <Port name="port_http" port="18541" />
+        </App>
+        <App app_id="1.7.1.1"></App>
+        <App app_id="1.8.1.1">
+            <Port name="port_gt" port="18551" />
+        </App>
+        <App app_id="1.9.1.1">
+            <Port name="port_http" port="18601" />
+        </App>
+        <App app_id="1.10.1.1">
+            <Port name="port_gt" port="18701" />
+        </App>
+    </AppList>
+    <ServerList>
+        <Server id="1" host="dispatch" inner_ip="192.0.0.15" outer_ip="127.0.0.1" />
+    </ServerList>
+    <AppHostCheck check_inner_ip="true" />
+    <GateserverMgrConf threshold_load_0="10" threshold_load_1="20" choose_add_load="1" />
+    <MysqlPoolMaxSize value="0" />
+    <RedisPoolMaxSize value="0" />
+    <Tracing service_name="dispatch" enabled="false" />
+    <MemPerfConfig force_open="true" output_interval="1800" black_list="proto Watcher WeakptrObserver Event Ability Impl Comp Handler data::" white_list="BuffComp EquipComp GatherComp ActorAbility">
+        <MemPerfAppList></MemPerfAppList>
+    </MemPerfConfig>
+    <CmdReportConfig force_open="true" output_interval="10">
+        <CmdReportAppList></CmdReportAppList>
+    </CmdReportConfig>
+    <MonitorReport port="1056" svn_report_interval="0" />
+    <DataReadConfig is_readlink="true" />
+    <TCMallocConfig output_tcmalloc_interval="30" tcmalloc_free_interval="0" />
+    <LocalDispatchConfig is_forbid_first_dispatch="true" />
+    <AutoReloadConfig interval="300" />
+    <ServiceProcessPacketCountMax value="0" />
+</Root>

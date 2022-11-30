@@ -1,0 +1,189 @@
+networks:
+  bridge:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.0.0.0/24
+          gateway: 192.0.0.1
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.2
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: unless-stopped
+    healthcheck:
+      test: [ 'CMD', 'redis-cli', 'ping' ]
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.3
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/redis:/data
+  gateserver:
+    build: .
+    image: hk4e/ubuntu
+    container_name: gateserver
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      gameserver: { condition: service_started }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.11
+    ports:
+      - 18101:18101
+      - 18101:18101/udp
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/gateserver/gateserver:/app/gateserver:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/gateserver.xml:/app/conf/gateserver.xml
+      - ./log:/app/log
+    command: ./gateserver -i 1.1.1.1
+  gameserver:
+    build: .
+    image: hk4e/ubuntu
+    container_name: gameserver
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      nodeserver: { condition: service_started }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.12
+    expose:
+      - 18201
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/gameserver/gameserver:/app/gameserver:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/gameserver.xml:/app/conf/gameserver.xml
+      - ./data/welink_3.2_qa/json:/data/json:ro
+      - ./data/welink_3.2_qa/lua:/data/lua:ro
+      - ./data/welink_3.2_qa/txt:/data/txt:ro
+      - ./data/welink_3.2_qa/xml:/data/xml:ro
+      - ./log:/app/log
+      - ./res:/res
+    command: ./gameserver -i 1.2.1.1
+  nodeserver:
+    build: .
+    image: hk4e/ubuntu
+    container_name: nodeserver
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.13
+    expose:
+      - 18301
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/nodeserver/nodeserver:/app/nodeserver:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/nodeserver.xml:/app/conf/nodeserver.xml
+      - ./log:/app/log
+    command: ./nodeserver -i 1.3.1.1
+  dbgate:
+    build: .
+    image: hk4e/ubuntu
+    container_name: dbgate
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      nodeserver: { condition: service_started }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.14
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/dbgate/dbgate:/app/dbgate:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/dbgate.xml:/app/conf/dbgate.xml
+      - ./log:/app/log
+    command: ./dbgate -i 1.4.1.1
+  muipserver:
+    build: .
+    image: hk4e/ubuntu
+    container_name: muipserver
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      nodeserver: { condition: service_started }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.16
+    ports:
+      - 18541:18541
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/muipserver/muipserver:/app/muipserver:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/muipserver.xml:/app/conf/muipserver.xml
+      - ./data/welink_3.2_qa/json:/data/json:ro
+      - ./data/welink_3.2_qa/lua:/data/lua:ro
+      - ./data/welink_3.2_qa/txt:/data/txt:ro
+      - ./data/welink_3.2_qa/xml:/data/xml:ro
+      - ./log:/app/log
+      - ./res:/res
+    command: ./muipserver -i 1.6.1.1
+  multiserver:
+    build: .
+    image: hk4e/ubuntu
+    container_name: multiserver
+    restart: unless-stopped
+    depends_on:
+      mysql: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      nodeserver: { condition: service_started }
+    networks:
+      bridge:
+        ipv4_address: 192.0.0.17
+    volumes:
+      - ./bin/3.2_beta/hk4e_output/lib/libasan.so.5:/lib/libasan.so.5:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libgcc_s.so.1:/lib/libgcc_s.so.1:ro
+      - ./bin/3.2_beta/hk4e_output/lib/libstdc++.so.6:/lib/libstdc++.so.6:ro
+      - ./bin/3.2_beta/hk4e_output/multiserver/multiserver:/app/multiserver:ro
+      - ./config/data/version.txt:/data/version.txt:ro
+      - ./config/multiserver.xml:/app/conf/multiserver.xml
+      - ./data/welink_3.2_qa/json:/data/json:ro
+      - ./data/welink_3.2_qa/lua:/data/lua:ro
+      - ./data/welink_3.2_qa/txt:/data/txt:ro
+      - ./data/welink_3.2_qa/xml:/data/xml:ro
+      - ./log:/app/log
+      - ./res:/res
+    command: ./multiserver -i 1.7.1.1
