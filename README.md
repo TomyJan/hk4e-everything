@@ -21,6 +21,4 @@
 - the `muipserver` will listen on `0.0.0.0:18541`
 - this setup will significantly reduce the hardware requirements, but you will need an external dispatch server such as `grasscutter`
 
-// 据说来自钟旭东
-
-// [二进制下载](https://mirror.tomys.top/OneDrive/%E8%BD%AF%E4%BB%B6/Games/%E5%8E%9F%E7%A5%9E/leaksrv)
+Resource Download: [Server Bin](https://mirror.tomys.top/189Cloud/%E8%BD%AF%E4%BB%B6/Games/%E5%8E%9F%E7%A5%9E/Server/leaksrv) | [Server Resource](https://mirror.tomys.top/189Cloud/%E8%BD%AF%E4%BB%B6/Games/%E5%8E%9F%E7%A5%9E/Server/livedata) | [Client](https://mirror.tomys.top/189Cloud/%E8%BD%AF%E4%BB%B6/Games/%E5%8E%9F%E7%A5%9E/Client_REL/3.2.0)
